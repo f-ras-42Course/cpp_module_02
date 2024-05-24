@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Fixed.hpp                                          :+:    :+:            */
+/*   main.c                                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/05/20 16:33:42 by fras          #+#    #+#                 */
-/*   Updated: 2024/05/24 16:25:09 by fras          ########   odam.nl         */
+/*   Created: 2024/05/24 17:56:20 by fras          #+#    #+#                 */
+/*   Updated: 2024/05/24 17:57:35 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Fixed.hpp"
 
-class Fixed
+int main()
 {
-	private:
-		int fixed_point_number_value_;
-		static const int fractional_bits_ = 8;			
-	public:
-		Fixed();
-		Fixed(const Fixed& other);
-		~Fixed();
-		Fixed& operator=(const Fixed& other);
-		int	getRawBits() const;
-		void setRawBits(const int raw);
-};
+	Fixed a;
+	Fixed b( a );
+	Fixed c;
+	c = b;
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
+	return 0;
+}

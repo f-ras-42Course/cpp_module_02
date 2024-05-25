@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/25 15:52:22 by fras          #+#    #+#                 */
-/*   Updated: 2024/05/25 16:18:02 by fras          ########   odam.nl         */
+/*   Updated: 2024/05/26 00:33:49 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 class Fixed
 {
 	private:
-		int fixed_point_number_value_;
+		int fixed_point_value_;
 		static const int fractional_bits_ = 8;
 	public:
 		Fixed();
@@ -28,5 +28,5 @@ class Fixed
 		int	getRawBits() const;
 		void setRawBits(const int raw);
 		int toInt() const;
-		int toFloat() const;
+		float toFloat() const;
 };

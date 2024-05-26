@@ -6,12 +6,11 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/26 08:27:13 by fras          #+#    #+#                 */
-/*   Updated: 2024/05/26 14:47:17 by fras          ########   odam.nl         */
+/*   Updated: 2024/05/26 17:19:57 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <cmath>
 
 Fixed::Fixed()
 {
@@ -53,52 +52,68 @@ std::ostream& operator<<(std::ostream &out, const Fixed& fixed)
 
 bool Fixed::operator==(const Fixed& other)
 {
-	
+	if (fixed_point_value_ == other.fixed_point_value_)
+		return true;
+	return false;
 }
 
 bool Fixed::operator!=(const Fixed& other)
 {
-	
+	if (fixed_point_value_ != other.fixed_point_value_)
+		return true;
+	return false;
 }
 
 bool Fixed::operator<=(const Fixed& other)
 {
-	
+	if (fixed_point_value_ <= other.fixed_point_value_)
+		return true;
+	return false;
 }
 
 bool Fixed::operator>=(const Fixed& other)
 {
-	
+	if (fixed_point_value_ >= other.fixed_point_value_)
+		return true;
+	return false;
 }
 
 bool Fixed::operator<(const Fixed& other)
 {
-	
+	if (fixed_point_value_ < other.fixed_point_value_)
+		return true;
+	return false;
 }
 
 bool Fixed::operator>(const Fixed& other)
 {
-	
+	if (fixed_point_value_ > other.fixed_point_value_)
+		return true;
+	return false;
 }
 
 Fixed& Fixed::operator*(const Fixed& other)
 {
-	
+	fixed_point_value_ *= (other.fixed_point_value_ >> fractional_bits_);
+	return *this;
 }
 
 Fixed& Fixed::operator/(const Fixed& other)
 {
-	
+	fixed_point_value_ /= (other.fixed_point_value_ >> fractional_bits_);
+	return *this;
 }
 
 Fixed& Fixed::operator+(const Fixed& other)
 {
-	
+	fixed_point_value_ += other.fixed_point_value_;
+	return *this;
 }
 
 Fixed& Fixed::operator-(const Fixed& other)
 {
-	
+	fixed_point_value_ -= other.fixed_point_value_;
+	return *this;
 }
 
 Fixed& Fixed::operator++()

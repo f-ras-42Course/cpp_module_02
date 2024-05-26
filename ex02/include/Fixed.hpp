@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/26 08:27:05 by fras          #+#    #+#                 */
-/*   Updated: 2024/05/26 08:27:08 by fras          ########   odam.nl         */
+/*   Updated: 2024/05/26 14:47:21 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,20 @@ class Fixed
 		~Fixed();
 		Fixed& operator=(const Fixed& other);
 		friend std::ostream& operator<<(std::ostream &out, const Fixed& fixed);
+		// bool operator==(const Fixed& other);
+		// bool operator!=(const Fixed& other);
+		// bool operator<=(const Fixed& other);
+		// bool operator>=(const Fixed& other);
+		// bool operator<(const Fixed& other);
+		// bool operator>(const Fixed& other);
+		// Fixed& operator*(const Fixed& other);
+		// Fixed& operator/(const Fixed& other);
+		// Fixed& operator+(const Fixed& other);
+		// Fixed& operator-(const Fixed& other);
+		Fixed& operator++();
+		Fixed operator++(int);
+		Fixed& operator--();
+		Fixed& operator--(int);
 		int	getRawBits() const;
 		void setRawBits(const int raw);
 		int toInt() const;

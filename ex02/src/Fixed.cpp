@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/26 08:27:13 by fras          #+#    #+#                 */
-/*   Updated: 2024/05/26 13:23:13 by fras          ########   odam.nl         */
+/*   Updated: 2024/05/26 14:47:17 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,82 @@ std::ostream& operator<<(std::ostream &out, const Fixed& fixed)
 {
 	out << fixed.toFloat();
 	return out;
+}
+
+bool Fixed::operator==(const Fixed& other)
+{
+	
+}
+
+bool Fixed::operator!=(const Fixed& other)
+{
+	
+}
+
+bool Fixed::operator<=(const Fixed& other)
+{
+	
+}
+
+bool Fixed::operator>=(const Fixed& other)
+{
+	
+}
+
+bool Fixed::operator<(const Fixed& other)
+{
+	
+}
+
+bool Fixed::operator>(const Fixed& other)
+{
+	
+}
+
+Fixed& Fixed::operator*(const Fixed& other)
+{
+	
+}
+
+Fixed& Fixed::operator/(const Fixed& other)
+{
+	
+}
+
+Fixed& Fixed::operator+(const Fixed& other)
+{
+	
+}
+
+Fixed& Fixed::operator-(const Fixed& other)
+{
+	
+}
+
+Fixed& Fixed::operator++()
+{
+	++(this->fixed_point_value_);
+	return *this;
+}
+
+Fixed Fixed::operator++(int)
+{
+	Fixed temp = *this;
+	(this->fixed_point_value_)++;
+	return temp;
+}
+
+Fixed& Fixed::operator--()
+{
+	--(this->fixed_point_value_);
+	return *this;
+}
+
+Fixed Fixed::operator--(int)
+{
+	Fixed temp = *this;
+	(this->fixed_point_value_)--;
+	return temp;
 }
 
 int	Fixed::getRawBits() const

@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/25 15:52:22 by fras          #+#    #+#                 */
-/*   Updated: 2024/05/26 00:33:49 by fras          ########   odam.nl         */
+/*   Updated: 2024/05/26 08:10:05 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class Fixed
 		Fixed(const float f);
 		~Fixed();
 		Fixed& operator=(const Fixed& other);
+		friend std::ostream& operator<<(std::ostream &out, const Fixed& fixed);
 		int	getRawBits() const;
 		void setRawBits(const int raw);
 		int toInt() const;

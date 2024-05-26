@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/25 15:52:33 by fras          #+#    #+#                 */
-/*   Updated: 2024/05/26 00:35:27 by fras          ########   odam.nl         */
+/*   Updated: 2024/05/26 07:16:55 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Fixed::Fixed(const Fixed& other)
 
 Fixed::Fixed(const int i)
 {
-		fixed_point_value_ = i << fractional_bits_; 
+	fixed_point_value_ = i << fractional_bits_; 
 }
 
 Fixed::Fixed(const float f)

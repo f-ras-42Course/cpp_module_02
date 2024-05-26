@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/26 08:27:25 by fras          #+#    #+#                 */
-/*   Updated: 2024/05/26 17:44:36 by fras          ########   odam.nl         */
+/*   Updated: 2024/05/26 19:26:38 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ int main()
 	std::cout << a++ << std::endl;
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
-	// std::cout << Fixed::max( a, b ) << std::endl;
+	std::cout << Fixed::max( a, b ) << std::endl;
 	std::cout << "\n--* Extra Tests *--\n";
+	std::cout << Fixed::min( a, b ) << std::endl;
 	std::cout << "\nComparisons:\n";
 	int i(0);
 	Fixed c(1.75f), d(1.75f);

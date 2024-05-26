@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/26 08:27:13 by fras          #+#    #+#                 */
-/*   Updated: 2024/05/26 17:19:57 by fras          ########   odam.nl         */
+/*   Updated: 2024/05/26 19:24:16 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,42 +50,42 @@ std::ostream& operator<<(std::ostream &out, const Fixed& fixed)
 	return out;
 }
 
-bool Fixed::operator==(const Fixed& other)
+bool Fixed::operator==(const Fixed& other) const
 {
 	if (fixed_point_value_ == other.fixed_point_value_)
 		return true;
 	return false;
 }
 
-bool Fixed::operator!=(const Fixed& other)
+bool Fixed::operator!=(const Fixed& other) const
 {
 	if (fixed_point_value_ != other.fixed_point_value_)
 		return true;
 	return false;
 }
 
-bool Fixed::operator<=(const Fixed& other)
+bool Fixed::operator<=(const Fixed& other) const
 {
 	if (fixed_point_value_ <= other.fixed_point_value_)
 		return true;
 	return false;
 }
 
-bool Fixed::operator>=(const Fixed& other)
+bool Fixed::operator>=(const Fixed& other) const
 {
 	if (fixed_point_value_ >= other.fixed_point_value_)
 		return true;
 	return false;
 }
 
-bool Fixed::operator<(const Fixed& other)
+bool Fixed::operator<(const Fixed& other) const
 {
 	if (fixed_point_value_ < other.fixed_point_value_)
 		return true;
 	return false;
 }
 
-bool Fixed::operator>(const Fixed& other)
+bool Fixed::operator>(const Fixed& other) const
 {
 	if (fixed_point_value_ > other.fixed_point_value_)
 		return true;
@@ -161,6 +161,27 @@ float Fixed::toFloat() const
 {
 	return static_cast<float>(fixed_point_value_) / (1 << fractional_bits_);
 }
+
+Fixed& Fixed::min(Fixed& fixed1, Fixed& fixed2)
+{
+	return (fixed1 < fixed2) ? fixed1 : fixed2;
+}
+
+const Fixed& Fixed::min(const Fixed& fixed1, const Fixed& fixed2)
+{
+	return (fixed1 < fixed2) ? fixed1 : fixed2;
+}
+
+Fixed& Fixed::max(Fixed& fixed1, Fixed& fixed2)
+{
+	return (fixed1 > fixed2) ? fixed1 : fixed2;
+}
+
+const Fixed& Fixed::max(const Fixed& fixed1, const Fixed& fixed2)
+{
+	return (fixed1 > fixed2) ? fixed1 : fixed2;
+}
+
 
 /*		
 		Constructor/destructor messages

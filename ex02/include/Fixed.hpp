@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/26 08:27:05 by fras          #+#    #+#                 */
-/*   Updated: 2024/05/26 17:09:18 by fras          ########   odam.nl         */
+/*   Updated: 2024/05/26 19:23:49 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ class Fixed
 		~Fixed();
 		Fixed& operator=(const Fixed& other);
 		friend std::ostream& operator<<(std::ostream &out, const Fixed& fixed);
-		bool operator==(const Fixed& other);
-		bool operator!=(const Fixed& other);
-		bool operator<=(const Fixed& other);
-		bool operator>=(const Fixed& other);
-		bool operator<(const Fixed& other);
-		bool operator>(const Fixed& other);
+		bool operator==(const Fixed& other) const;
+		bool operator!=(const Fixed& other) const;
+		bool operator<=(const Fixed& other) const;
+		bool operator>=(const Fixed& other) const;
+		bool operator<(const Fixed& other) const;
+		bool operator>(const Fixed& other) const;
 		Fixed& operator*(const Fixed& other);
 		Fixed& operator/(const Fixed& other);
 		Fixed& operator+(const Fixed& other);
@@ -44,4 +44,8 @@ class Fixed
 		void setRawBits(const int raw);
 		int toInt() const;
 		float toFloat() const;
+		static Fixed& min(Fixed& fixed1, Fixed& fixed2);
+		static const Fixed& min(const Fixed& fixed1, const Fixed& fixed2);
+		static Fixed& max(Fixed& fixed1, Fixed& fixed2);
+		static const Fixed& max(const Fixed& fixed1, const Fixed& fixed2);
 };

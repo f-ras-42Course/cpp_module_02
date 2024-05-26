@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/26 08:27:13 by fras          #+#    #+#                 */
-/*   Updated: 2024/05/26 10:59:52 by fras          ########   odam.nl         */
+/*   Updated: 2024/05/26 13:23:13 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ Fixed::~Fixed()
 
 Fixed& Fixed::operator=(const Fixed& other)
 {
-	if (this == &other)
-		return *this;
-	
-	this->fixed_point_value_ = other.fixed_point_value_;
+	if (this != &other)
+	{
+		this->fixed_point_value_ = other.fixed_point_value_;
+	}
 	return *this;
 }
 

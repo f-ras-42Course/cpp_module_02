@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/05/26 08:27:13 by fras          #+#    #+#                 */
-/*   Updated: 2024/05/26 19:24:16 by fras          ########   odam.nl         */
+/*   Updated: 2024/05/27 12:23:16 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,44 +52,32 @@ std::ostream& operator<<(std::ostream &out, const Fixed& fixed)
 
 bool Fixed::operator==(const Fixed& other) const
 {
-	if (fixed_point_value_ == other.fixed_point_value_)
-		return true;
-	return false;
+	return (fixed_point_value_ == other.fixed_point_value_) ? true : false;
 }
 
 bool Fixed::operator!=(const Fixed& other) const
 {
-	if (fixed_point_value_ != other.fixed_point_value_)
-		return true;
-	return false;
+	return (fixed_point_value_ != other.fixed_point_value_) ? true : false;
 }
 
 bool Fixed::operator<=(const Fixed& other) const
 {
-	if (fixed_point_value_ <= other.fixed_point_value_)
-		return true;
-	return false;
+	return (fixed_point_value_ <= other.fixed_point_value_) ? true : false;
 }
 
 bool Fixed::operator>=(const Fixed& other) const
 {
-	if (fixed_point_value_ >= other.fixed_point_value_)
-		return true;
-	return false;
+	return (fixed_point_value_ >= other.fixed_point_value_) ? true : false;
 }
 
 bool Fixed::operator<(const Fixed& other) const
 {
-	if (fixed_point_value_ < other.fixed_point_value_)
-		return true;
-	return false;
+	return (fixed_point_value_ < other.fixed_point_value_) ? true : false;
 }
 
 bool Fixed::operator>(const Fixed& other) const
 {
-	if (fixed_point_value_ > other.fixed_point_value_)
-		return true;
-	return false;
+	return (fixed_point_value_ > other.fixed_point_value_) ? true : false;
 }
 
 Fixed& Fixed::operator*(const Fixed& other)
